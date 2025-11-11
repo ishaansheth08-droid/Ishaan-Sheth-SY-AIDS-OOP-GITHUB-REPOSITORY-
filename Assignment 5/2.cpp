@@ -17,7 +17,7 @@ class Student {
 };
  
 int main(){
-    Student s("Ishaan", 93.2);
+    Student s("Ishaan", 99.2);
     s.display();
  
     return 0;
