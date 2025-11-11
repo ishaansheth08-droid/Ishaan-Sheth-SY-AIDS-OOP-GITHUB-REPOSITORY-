@@ -1,43 +1,25 @@
 #include <iostream>
 using namespace std;
 
-class department{
-protected:
-    string dname;
-};
-
-class student {
-protected: 
-    string sname;
-    int roll;
-};
+class department { protected: string dname; };
+class student { protected: string sname; int roll; };
 
 class marks : protected department, protected student {
-    int m1, m2, percentage;
+    int m1, m2;
 public:
-    void accept(){
-        cout << "Enter department :" << endl;
-        cin >> dname;
-        cout << "Enter name :" << endl;
-        cin >> sname;
-        cout << "Enter marks 1 :" << endl;
-        cin >> m1;
-        cout << "Enter marks 2 :" << endl;
-        cin >> m2;
+    void accept() {
+        cout << "Enter department, name, marks1, marks2:\n";
+        cin >> dname >> sname >> m1 >> m2;
     }
-    
-    void calculate(){
-        int per = (m1+m2)/2;
-        cout << "Department: " << dname << endl;
-        cout << "Name: " << sname << endl;
-        cout << "Percentage: " << per << endl;
+    void calculate() {
+        cout << "Department: " << dname
+             << "\nName: " << sname
+             << "\nPercentage: " << (m1 + m2) / 2 << endl;
     }
-    
 };
 
-int main(){
+int main() {
     marks m;
     m.accept();
     m.calculate();
-    
 }
