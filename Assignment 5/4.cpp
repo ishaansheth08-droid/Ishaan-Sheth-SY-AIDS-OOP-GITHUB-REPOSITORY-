@@ -28,8 +28,8 @@ class Student{
  
 int main(){
     Student s1;
-    Student s2("Anushree");
-    Student s3("Gaurav", 18);
+    Student s2("Ishaan");
+    Student s3("Alex", 99);
 
     s1.display();
     s2.display();
