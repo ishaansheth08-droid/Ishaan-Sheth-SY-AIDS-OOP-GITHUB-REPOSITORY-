@@ -17,6 +17,6 @@ public:
 
 int main() {
     Library::Book b1; 
-    b1.setTitle("The Alchemist");
+    b1.setTitle("Harry Potter");
     b1.show();
 }
