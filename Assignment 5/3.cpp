@@ -20,8 +20,8 @@ class College{
 };
  
 int main(){
-    College s1(37, "Anushree");
-    College s2(18, "Gaurav");
+    College s1(37, "Ishaan");
+    College s2(18, "Aryan");
 
     s1.display();
     s2.display();
