@@ -1,42 +1,37 @@
 #include <iostream>
 using namespace std;
 
-class Book {
-    int id;
+class city{
     string name;
-    float price;
-public:
-    void getData() {
-        cout << "\nEnter book ID: ";
-        cin >> id;
-        cout << "Enter book name: ";
+    int population;
+    public:
+    void accept(){
+        cout << "Enter name of city: " << endl; 
         cin >> name;
-        cout << "Enter book price: ";
-        cin >> price;
+        cout << "Enter a number: " <<endl; 
+        cin >> population;  
     }
 
-    float getPrice() { return price; }
-
-    void display() {
-        cout << "\n--- Book Details ---" << endl;
-        cout << "Book ID: " << id << endl;
-        cout << "Book Name: " << name << endl;
-        cout << "Book Price: " << price << endl;
+    void highest_population(city c[]){
+        int high = 0;
+        for (int i = 0; i < 5; i++) {
+            if(c[i].population > c[high].population){
+                high = i;
+            }
+        }
+        cout << "City with highest population is: " << c[high].name << endl; 
+        cout << "Population: " << c[high].population << endl;
     }
 };
-
-int main() {
-    Book b1, b2;
-
-    cout << "Enter details for Book 1:" << endl;
-    b1.getData();
-    cout << "Enter details for Book 2:" << endl;
-    b2.getData();
-
-    if (b1.getPrice() > b2.getPrice())
-        b1.display();
-    else
-        b2.display();
-
+ 
+int main(){
+    city c[5];
+    for (int i = 0; i < 5; i++){
+        cout << "Enter details for city " << i << endl; 
+        c[i].accept();
+    }
+    
+    c[0].highest_population(c);
+    
     return 0;
 }

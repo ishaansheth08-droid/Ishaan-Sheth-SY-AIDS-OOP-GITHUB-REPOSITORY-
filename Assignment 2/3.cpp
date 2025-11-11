@@ -1,27 +1,40 @@
 #include <iostream>
 using namespace std;
 
-class Time {
-    int H, M, S;
+class staff{
+private:
+    string name;
+    string post;
 public:
-    void getData() {
-        cout << "Enter hours: ";
-        cin >> H;
-        cout << "Enter minutes: ";
-        cin >> M;
-        cout << "Enter seconds: ";
-        cin >> S;
+    void accept(){
+        cout << "Enter name:  " <<endl; 
+        cin >> name;
+        cout << "Enter post: " <<endl;  
+        cin >> post; 
     }
 
-    void displayTotalSeconds() {
-        int total = H * 3600 + M * 60 + S;
-        cout << "\nTotal time in seconds = " << total << endl;
+    void disp(staff a[]){
+        cout << "Employess at HOD Position: " << endl;
+        for (int i = 0; i < 10; i++){
+            if(a[i].post == "HOD"){
+                cout << "Name: " << a[i].name << endl;
+            }
+        }
+        
     }
+
 };
 
-int main() {
-    Time t;
-    t.getData();
-    t.displayTotalSeconds();
+
+ 
+int main(){
+    staff a[10];
+    for (int i = 0; i < 10; i++){
+        cout << "Enter employees details: " << i+1 << endl;
+        a[i].accept();
+    }
+
+    a[0].disp(a);
+    
     return 0;
 }
